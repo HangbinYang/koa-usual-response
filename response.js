@@ -37,6 +37,10 @@ module.exports = () => {
       })
     }
 
-    await next()
+    try {
+      await next()
+    } catch (err) {
+      ctx.error('Server Error')
+    }
   }
 }
