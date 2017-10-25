@@ -36,5 +36,7 @@ module.exports = () => {
         context: JSON.stringify(ctx)
       })
     }
+
+    await next()
   }
 }
