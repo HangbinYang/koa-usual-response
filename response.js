@@ -28,7 +28,7 @@ module.exports = () => {
       ctx.status = 500;
       ctx.body = {
         status: 0,
-        message: error || 'bad request'
+        message: 'Server Error'
       }
       console.error({
         status: 500,
@@ -40,7 +40,7 @@ module.exports = () => {
     try {
       await next()
     } catch (err) {
-      ctx.error('Server Error')
+      ctx.error(err)
     }
   }
 }
